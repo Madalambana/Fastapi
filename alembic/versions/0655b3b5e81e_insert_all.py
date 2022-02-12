@@ -37,7 +37,7 @@ def upgrade():
     sa.PrimaryKeyConstraint('id')
     )
     op.create_table('votes',
-    sa.Column('post_id', sa.Integer(), nullable=False),
+    sa.Column('post_id', sa.Integer(), nullable=False),  
     sa.Column('user_id', sa.Integer(), nullable=False),
     sa.ForeignKeyConstraint(['post_id'], ['post.id'], ondelete='CASCADE'),
     sa.ForeignKeyConstraint(['user_id'], ['users.id'], ondelete='CASCADE'),
